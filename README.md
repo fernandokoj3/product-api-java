@@ -1,4 +1,4 @@
-# `Project FAIR`
+# `Project PRODUCT-API`
 
 ![Java](https://img.shields.io/badge/-java-%23C21325?style=for-the-badge&logo=java&logoColor=white)
 ![JUnit](https://img.shields.io/badge/junit-%6FD700.svg?style=for-the-badge&logo=junit&logoColor=white)
@@ -10,7 +10,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [`Project FAIR`](#project-fair)
+- [`Project PRODUCT-API`](#project-product-api)
   - [Content Table](#content-table)
 - [User Instructions](#user-instructions)
     - [Requirements](#requirements)
