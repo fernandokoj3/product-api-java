@@ -3,7 +3,10 @@ package br.dorotech;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
 
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,9 +26,11 @@ import java.util.List;
 import java.util.Random;
 
 @QuarkusTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ProductControllerTest {
 
     @Test
+    @Order(1)
     public void whenPostProduct_thenProductShouldReturnedOk() throws JsonProcessingException {
         ProductCreateRequest request = new ProductCreateRequest();
         request.setAmount(BigDecimal.ONE.longValue());
@@ -55,6 +60,7 @@ public class ProductControllerTest {
     }
 
     @Test
+    @Order(2)
     public void whenPostProduct_thenProductShouldReturnedBadRequest() throws JsonProcessingException {
         ProductCreateRequest request = new ProductCreateRequest();
         String json = new ObjectMapper().writeValueAsString(request);
@@ -73,6 +79,7 @@ public class ProductControllerTest {
     }
 
     @Test
+    @Order(3)
     public void whenGetProducts_thenProductsShouldReturnedProductList() throws JsonProcessingException {
         ProductRequest request = new ProductRequest();
         String json = new ObjectMapper().writeValueAsString(request);

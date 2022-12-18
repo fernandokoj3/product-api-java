@@ -32,6 +32,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductResponse save(ProductCreateRequest request) {
         ProductEntity entity = this.productMapper.toEntity(request);
+        Optional.ofNullable(entity).orElseThrow(
+                () -> new WebCustomExeption(HttpStatus.SC_BAD_REQUEST, "Invalid product", "save"));
+
         ProductEntity result = this.repository.save(entity);
         ProductResponse response = this.productMapper.fromEntity(result);
         return response;
